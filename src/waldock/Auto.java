@@ -20,6 +20,12 @@ public class Auto {
 	}
 
 	public Auto(String type, Color farbe, int leistung) {
+		if (type == null || farbe == null || leistung <=0) {
+			throw new IllegalArgumentException();
+		}
+		if (type.trim().length()==0) {
+			throw new IllegalArgumentException();
+		}
 		this.type = type;
 		this.farbe = farbe;
 		this.leistung = leistung;
@@ -31,6 +37,9 @@ public class Auto {
 	}
 
 	public void setType(String type) {
+		if (type.trim().length()==0) {
+			throw new IllegalArgumentException();
+		}
 		this.type = type;
 	}
 
@@ -39,6 +48,9 @@ public class Auto {
 	}
 
 	public void setFarbe(Color farbe) {
+		if (farbe==null) {
+			throw new IllegalArgumentException();
+		}
 		this.farbe = farbe;
 	}
 
@@ -47,6 +59,9 @@ public class Auto {
 	}
 
 	public void setLeistung(int leistung) {
+		if (leistung<=0) {
+			throw new IllegalArgumentException();
+		}
 		leistung = this.leistung;
 	}
 

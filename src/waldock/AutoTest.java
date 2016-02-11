@@ -5,6 +5,8 @@ import java.awt.Color;
 import org.junit.Assert;
 import org.junit.Test;
 
+// SSH-Link: git@github.com:KevinW1998/AutoTestA19.git
+
 public class AutoTest {
 	
 	@Test
@@ -57,8 +59,14 @@ public class AutoTest {
 	}
 	
 	@Test(expected=NullPointerException.class)
-	public void testExecption() {
+	public void testNullPtrExecption() {
 		Auto a = new Auto();
-		a.setType(null);
+		a.setFarbe(null);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void testIllegalArgumentExecption() {
+		Auto a = new Auto();
+		a.setLeistung(-1);
 	}
 }
